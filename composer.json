@@ -20,6 +20,7 @@
         "drupal/core-composer-scaffold": "^11",
         "drupal/core-project-message": "^11",
         "drupal/core-recommended": "^11",
+        "drupal/examples": "^4.0",
         "drupal/honey": "^1.0"
     },
     "conflict": {
