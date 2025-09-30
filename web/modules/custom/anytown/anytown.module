@@ -4,3 +4,17 @@
  * @file
  * Contains anytown.module.
  */
+
+/**
+ * Implements hook_theme().
+ */
+function anytown_theme($existing, $type, $theme, $path) {
+  return [
+    'anytown_weather' => [
+      'variables' => [
+        'location' => NULL,
+        'forecast' => NULL,
+      ],
+    ],
+  ];
+}
