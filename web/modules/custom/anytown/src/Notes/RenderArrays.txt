@@ -34,3 +34,13 @@ substituting "_" in call for "-" in twig). Ex: "basic-page.html.twig" becomes "b
 3. #type => managed_file
 Provides data and properties for a specific type of element. Transformed to #markup or #theme.
 Shortcuts for writing more complex elements.
+
+How are properties defined?
+- Some props are valid for any element, For the rest, determine if it's a #type, #theme or #markup element then refer to:
+#markup - consult documentation
+#theme - props relate to template file variables (check corresponding twig)
+#type - determined by the #type value's definition. Consult element type's documentation
+
+Summary:
+- Render arrays consist of nested elements where each element represents a bit of data. That data is described using
+properties. The props are then interpreted by the renderer in order to convert the content of the array to HTML.
