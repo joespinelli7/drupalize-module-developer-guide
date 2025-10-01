@@ -5,7 +5,16 @@ What are properties and elements?
 - All renderable arrays have 2 kinds of key/value pairs:
 Elements and Properties
 - Properties:
-Begin with "#" and the values of these properties influence how the array will be rendered to a string.
+Begin with "#" and the values of these properties determine how the array will be rendered to a string.
+- 2 types of Properties:
+1. Value Properties (most common):
+Examples: #title, #prefix, #weight
+Value props store strings, integers, booleans and complex data types that contain info to be used in a
+template or influence how an element is rendered to HTML.
+2. Callable Properties:
+Examples: #pre_render, #post_render
+These props hold references to PHP callables. At specific points during the rendering process these functions/methods
+will be called and can alter the process or current state.
 - Elements:
 All keys that don't begin with "#" and the values should be renderable arrays themselves containing properties to
 instruct Drupal's theming system how to render the data.
