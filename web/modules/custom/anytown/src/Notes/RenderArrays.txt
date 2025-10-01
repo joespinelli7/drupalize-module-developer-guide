@@ -1,0 +1,16 @@
+Notes from Drupalize Renders Arrays tutorial:-->
+https://drupalize.me/tutorial/what-are-render-arrays
+
+What are properties and elements?
+- All renderable arrays have 2 kinds of key/value pairs:
+Elements and Properties
+- Properties:
+Begin with "#" and the values of these properties influence how the array will be rendered to a string.
+- Elements:
+All keys that don't begin with "#" and the values should be renderable arrays themselves containing properties to
+instruct Drupal's theming system how to render the data.
+
+Basic format of a render array:
+
+3 main ways to describe content as a renderable array:
+
