@@ -9,8 +9,19 @@ Begin with "#" and the values of these properties influence how the array will b
 - Elements:
 All keys that don't begin with "#" and the values should be renderable arrays themselves containing properties to
 instruct Drupal's theming system how to render the data.
+Elements are used to describe individual sections within the array (children arrays) and represent data.
 
 Basic format of a render array:
+- Structure of render array is similar to structure of HTML dom, which contains various elements such as H1, p tags
+that can be nested within other HTML tags and all these tags can have attributes that provide additional info
+about each tag.
 
 3 main ways to describe content as a renderable array:
-
+1. #markup => <p>Hello World!</p>
+Provides valid HTML markup directly.
+2. #theme => table
+Markup provided by a template file (twig). Where the name of the twig template matches the call of the #theme (except
+substituting "_" in call for "-" in twig). Ex: "basic-page.html.twig" becomes "basic-page" when called as value for #theme.
+3. #type => managed_file
+Provides data and properties for a specific type of element. Transformed to #markup or #theme.
+Shortcuts for writing more complex elements.
