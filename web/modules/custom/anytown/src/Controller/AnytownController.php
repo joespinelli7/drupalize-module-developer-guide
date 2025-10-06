@@ -16,7 +16,9 @@ class AnytownController extends ControllerBase {
    *
    * Return []
    */
-  public function build() {
+  public function build(string $style) {
+    // Style should be one of 'short', or 'extended'. And default to 'short'.
+    $style = (in_array($style, ['short', 'extended'])) ? $style : 'short';
     $location = 'City Market';
     $forecast = 'Sunny with a chance of meatballs.';
 
@@ -27,7 +29,17 @@ class AnytownController extends ControllerBase {
       '#theme' => 'anytown_weather', // coming from .module theme hook
       '#location' => $location,
       '#forecast' => $forecast,
+      '#style' => $style,
     ];
+
+//    Another way to dynamically change markup based on route params
+//    other way being passing variable direct and checking in twig
+    if ($style === 'extended') {
+      $build['content_extended'] = [
+        '#type' => 'markup',
+        '#markup' => '<p><strong>Bonus tip:</strong> Stock up on salt and firewood now.</p>',
+      ];
+    }
 
     return $build;
   }
