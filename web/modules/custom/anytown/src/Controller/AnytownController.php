@@ -32,8 +32,8 @@ class AnytownController extends ControllerBase {
       '#style' => $style,
     ];
 
-//    Another way to dynamically change markup based on route params
-//    other way being passing variable direct and checking in twig
+//    Another way to dynamically change markup based on route params other
+//    oway being passing variable directly like above and checking in twig
     if ($style === 'extended') {
       $build['content_extended'] = [
         '#type' => 'markup',
