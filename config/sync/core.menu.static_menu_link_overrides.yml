@@ -7,3 +7,9 @@ definitions:
     weight: 0
     expanded: false
     enabled: true
+  node__add_page:
+    menu_name: tools
+    parent: ''
+    weight: 0
+    expanded: false
+    enabled: true
