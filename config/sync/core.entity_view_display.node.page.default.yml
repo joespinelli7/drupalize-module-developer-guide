@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_note
     - node.type.page
   module:
+    - field_permission_example
     - text
     - user
 _core:
@@ -21,6 +23,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 100
+    region: content
+  field_note:
+    type: field_permission_example_simple_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
     region: content
   links:
     weight: 101
