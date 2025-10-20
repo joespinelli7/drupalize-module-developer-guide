@@ -1,0 +1,14 @@
+Notes from Drupalize Renders Arrays tutorial:
+https://drupalize.me/tutorial/concept-services-and-container
+
+
+Drupal core includes services for doing common things like accessing the database, sending email, or making HTTP requests.
+Generally speaking, almost everything that Drupal does is actually done by one of these objects. In Drupal, these objects
+are called services and in order to make working with them easier, they are primarily accessed through the service container.
+
+What are services?
+- A service in Drupal is a PHP object that encapsulates functionality or business logic in flexible and reusable fashion.
+- Services provide modular, reusable functionalities for easy integration into custom modules.
+
+The service container:
+The service container in Drupal acts as a repository and manager for all services.
