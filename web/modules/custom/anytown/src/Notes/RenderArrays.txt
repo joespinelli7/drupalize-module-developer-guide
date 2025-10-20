@@ -1,4 +1,4 @@
-Notes from Drupalize Renders Arrays tutorial:-->
+Notes from Drupalize Renders Arrays tutorial:
 https://drupalize.me/tutorial/what-are-render-arrays
 
 What are properties and elements?
