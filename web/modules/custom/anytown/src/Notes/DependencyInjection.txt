@@ -12,6 +12,7 @@ How is dependency injection used in Drupal?
 Drupal to determine details based on configuration such as database type.
 
 Constructor injection:
+- For constructor dependency injection, any class being passed into the constructor must be an instance of, extend, or implement the same class or interface specified in the constructor’s type hint.
 - Dependencies (services) are supplied as arguments to a class constructor.
 - For example, a service querying a third-party API might depend on the http_client service for making HTTP requests, the cache service for caching responses, and the logger service for logging errors.
 Here's an example:
