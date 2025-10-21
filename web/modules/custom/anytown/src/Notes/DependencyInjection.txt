@@ -1,0 +1,4 @@
+Notes from Drupalize Renders Arrays tutorial:
+https://drupalize.me/tutorial/concept-dependency-injection
+
+How is dependency injection used in Drupal?
