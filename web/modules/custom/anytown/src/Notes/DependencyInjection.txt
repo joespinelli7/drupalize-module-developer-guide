@@ -5,7 +5,7 @@ https://www.youtube.com/shorts/mbJzwKiE1IU
 Dependency refers to a class in your code.
 If we then inject other classes into our code, all that really means is we are passing objects to other objects.
 In most simple form, this happens via classes constructor.
-Main advantage is it leads to greater flexibilty b/c we don't dicate which specific instance of a class it has to use.
+Main advantage is it leads to greater flexibility b/c we don't dictate which specific instance of a class it has to use.
 
 How is dependency injection used in Drupal?
 - It enables modules to request services like the db or current user service w/o knowing specifics. This in turn allows
