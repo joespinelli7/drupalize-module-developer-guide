@@ -1,9 +1,11 @@
 Notes from Drupalize Renders Arrays tutorial:
 https://drupalize.me/tutorial/concept-dependency-injection
 https://www.youtube.com/shorts/mbJzwKiE1IU
+https://www.youtube.com/watch?v=DpMGEhwuuyA
 
 Dependency refers to a class in your code.
-If we then inject other classes into our code, all that really means is we are passing objects to other objects.
+Instead of initializing an object in a method, we pass it as an argument/parameter, all that really means is we are passing objects to other objects.
+So the place we create the object is done in a separate place from where you use the object (dependent).
 In most simple form, this happens via classes constructor.
 Main advantage is it leads to greater flexibility b/c we don't dictate which specific instance of a class it has to use.
 
