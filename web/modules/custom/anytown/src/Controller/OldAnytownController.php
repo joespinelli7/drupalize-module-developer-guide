@@ -5,15 +5,11 @@ declare(strict_types=1);
 namespace Drupal\anytown\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\DependencyInjection\AutowireTrait;
-use Drupal\Core\Logger\RfcLogLevel;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Exception\RequestException;
 
 /**
  * Returns responses for Anytown routes.
  */
-class AnytownController extends ControllerBase {
+class OldAnytownController extends ControllerBase {
 
   /**
    * Returns a renderable array for a Anytown weather page.
