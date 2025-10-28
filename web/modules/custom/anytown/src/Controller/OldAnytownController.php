@@ -8,6 +8,8 @@ use Drupal\Core\Controller\ControllerBase;
 
 /**
  * Returns responses for Anytown routes.
+ * This solution became outdated after lesson:
+ * https://drupalize.me/tutorial/use-service-controller.
  */
 class OldAnytownController extends ControllerBase {
 
@@ -32,8 +34,8 @@ class OldAnytownController extends ControllerBase {
       '#style' => $style,
     ];
 
-//    Another way to dynamically change markup based on route params other
-//    oway being passing variable directly like above and checking in twig
+//    Another way to dynamically change markup based on route params, other
+//    way being passing variable directly like above and checking in twig
     if ($style === 'extended') {
       $build['content_extended'] = [
         '#type' => 'markup',
