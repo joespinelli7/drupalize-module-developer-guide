@@ -8,6 +8,8 @@ use Drupal\Core\Controller\ControllerBase;
 
 /**
  * Returns responses for Anytown routes.
+ * This solution became outdated after lesson:
+ * https://drupalize.me/tutorial/use-service-controller.
  */
 class OldAnytownController extends ControllerBase {
 
