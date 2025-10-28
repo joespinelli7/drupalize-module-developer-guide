@@ -18,3 +18,8 @@ What does this service do?
 - Use your IDE to explore the class associated with the service and see which PHP interface the service implements.
 - For example, the http_client service (found in core/core.services.yml) is provided by GuzzleHttp\Client class which
 implements \GuzzleHttp\ClientInterface. This gives us info to dig into and learn more and find additional documentation.
+
+Use Cases:
+- Frequently used in Controllers for business logic and o figure out what information to display on the page. This might
+include querying for a list of entities, getting information about the current user, or accessing saved configuration
+- Best practice to always use DI to supply services
