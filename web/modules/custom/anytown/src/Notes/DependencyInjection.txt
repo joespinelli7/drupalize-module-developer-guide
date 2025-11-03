@@ -45,6 +45,10 @@ Constructor injection via a create() factory method
 - Drupal frequently uses a static create() factory method for constructor injection. This is the most common pattern in Drupal modules.
 - Example:
 $example = ExampleService::create($container);
+- Important to know how to use this as opposed to Autowire trait for 2 reasons:
+1. There are some services that accept configuration when they're initialized and while it's possible to hardcode that configuration using Autowire, if you need
+dynamically calculate the configuration you're going to need to use create() factory method approach.
+2. Autowiring is new to Drupal and a lot existing code still use create() approach.
 
 Setting injection:
 - Setter injection uses setter methods to set dependencies after object instantiation. This method is less common but useful in specific scenarios.
@@ -58,7 +62,6 @@ and shared behavior:
   class Dog extends Animal {}
 A Dog is an Animal.
 It inherits methods and properties from its parent.
-
 - Dependency Injection = "Has-a" Relationship:
 Dependency injection expresses collaboration — one class relies on another, but isn’t defined by it:
   class Dog {
@@ -70,3 +73,7 @@ Dependency injection expresses collaboration — one class relies on another, bu
   }
 Here, Dog has a Toy.
 It’s not extending Toy; it’s using it as a dependency.
+
+Autowiring for Dependency Injection:
+- Can use class "use Drupal\Core\DependencyInjection\AutowireTrait;" in Drupal classes/services to autowire and use less code when injecting services
+into your classes.
