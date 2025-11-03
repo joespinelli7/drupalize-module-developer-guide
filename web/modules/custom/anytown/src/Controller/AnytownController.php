@@ -57,7 +57,8 @@ class AnytownController extends ControllerBase {
     try {
       $response = $this->httpClient->get($url);
       $data = json_decode($response->getBody()->getContents());
-    } catch (RequestException $e) {
+    }
+    catch (RequestException $e) {
       $this->logger->log(RfcLogLevel::WARNING, $e->getMessage());
     }
 
