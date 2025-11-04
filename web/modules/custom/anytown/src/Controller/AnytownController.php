@@ -5,17 +5,18 @@ declare(strict_types=1);
 namespace Drupal\anytown\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\DependencyInjection\AutowireTrait;
+//use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\Core\Logger\RfcLogLevel;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Returns responses for Anytown routes.
  */
 class AnytownController extends ControllerBase {
 
-  use AutowireTrait;
+//  use AutowireTrait;
 
   /**
    * HTTP client.
@@ -40,6 +41,15 @@ class AnytownController extends ControllerBase {
   public function __construct(ClientInterface $http_client) {
     $this->httpClient = $http_client;
     $this->logger = $this->getLogger('anytown');
+  }
+
+  /**
+   * {@inheritDoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('http_client')
+    );
   }
 
   /**
