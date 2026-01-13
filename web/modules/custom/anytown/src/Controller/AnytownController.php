@@ -46,7 +46,8 @@ class AnytownController extends ControllerBase {
 
   /**
    * {@inheritDoc}
-   * Would be needed if not using AutowireTrait which handles DI for you.
+   * Would be needed if not using AutowireTrait which handles DI for you. Behind the scenes this is what the
+   * AutowireTrait does, initializing an instance of AnytownController class and passing in http_client service.
    * Would also need to remove use AutowireTrait statements
    * Comes from ContainerInjectionInterface which is implemented in ControllerBase which we're extending
    */
