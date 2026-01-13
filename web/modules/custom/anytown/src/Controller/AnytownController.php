@@ -40,6 +40,7 @@ class AnytownController extends ControllerBase {
    */
   public function __construct(ClientInterface $http_client) {
     $this->httpClient = $http_client;
+    // getLogger() comes from ControllerBase class we're extending so no need to DI it
     $this->logger = $this->getLogger('anytown');
   }
 
