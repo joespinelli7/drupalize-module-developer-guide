@@ -47,6 +47,7 @@ class AnytownController extends ControllerBase {
   /**
    * {@inheritDoc}
    * Would be needed if not using AutowireTrait which handles DI for you.
+   * Would also need to remove use AutowireTrait statements
    */
 //  public static function create(ContainerInterface $container) {
 //    return new static(
