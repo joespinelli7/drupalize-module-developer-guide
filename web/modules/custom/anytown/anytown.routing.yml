@@ -5,7 +5,7 @@ anytown.weather_page:
   path: '/weather/{style}'
   defaults:
     # Title of the page used for things like <title> tag.
-#    _title: 'Weather at the market'
+    _title: 'Weather at the market'
     # Defines which method, on which class, should be called to retrieve the
     # content of the page.
     _controller: '\Drupal\anytown\Controller\AnytownController::build'
