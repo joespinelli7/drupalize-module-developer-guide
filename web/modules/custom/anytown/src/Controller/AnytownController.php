@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace Drupal\anytown\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\Core\DependencyInjection\AutowireTrait;
+//use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\Core\Logger\RfcLogLevel;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
-//use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Returns responses for Anytown routes.
  */
 class AnytownController extends ControllerBase {
 
-  use AutowireTrait;
+//  use AutowireTrait;
 
   /**
    * HTTP client.
@@ -51,11 +51,11 @@ class AnytownController extends ControllerBase {
    * Would also need to remove use AutowireTrait statements
    * Comes from ContainerInjectionInterface which is implemented in ControllerBase which we're extending
    */
-//  public static function create(ContainerInterface $container) {
-//    return new static(
-//      $container->get('http_client')
-//    );
-//  }
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('http_client')
+    );
+  }
 
   /**
    * Returns a renderable array for Anytown weather page.
