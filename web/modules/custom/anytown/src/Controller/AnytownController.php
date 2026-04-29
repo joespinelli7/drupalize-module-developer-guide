@@ -90,6 +90,8 @@ class AnytownController extends ControllerBase {
       $this->logger->log(RfcLogLevel::WARNING, $e->getMessage());
     }
 
+//    Since ControllerBase declares and uses $currentUser, you can access it this way but best practice is injecting to allow
+//    the property to live within the class.
 //    $userName = $this->currentUser()->getDisplayName();
     $userName = $this->currentUser->getDisplayName();
 
