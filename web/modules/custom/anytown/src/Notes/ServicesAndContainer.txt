@@ -11,7 +11,7 @@ What are services?
 - Services provide modular, reusable functionalities for easy integration into custom modules.
 
 The service container:
-- The service container in Drupal acts as a repository and manager for all services.
+- The service container in Drupal acts as the single source for all services.
 - Accessing a service can be done through:
 Dependency injection: Injecting services into a class via the constructor (dependency injection).
 Static methods: In procedural code (like in hook implementations), access services using static methods such as \Drupal::currentUser()
