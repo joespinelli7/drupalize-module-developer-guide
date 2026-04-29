@@ -66,7 +66,7 @@ class AnytownController extends ControllerBase {
     // Style should be one of 'short', or 'extended'. And default to 'short'.
     $style = (in_array($style, ['short', 'extended'])) ? $style : 'short';
 
-    $url = 'https://module-developer-guide-demo-site.ddev.site/modules/custom/anytown/data/weather_forecast1.json';
+    $url = 'https://module-developer-guide-demo-site.ddev.site/modules/custom/anytown/data/weather_forecast.json';
     $data = NULL;
 
     try {
