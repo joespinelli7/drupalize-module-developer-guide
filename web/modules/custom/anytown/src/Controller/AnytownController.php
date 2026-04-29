@@ -7,8 +7,11 @@ namespace Drupal\anytown\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\Core\Logger\RfcLogLevel;
+use Drupal\Core\Session\AccountInterface;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
+use http\Client;
+
 // would be required if using create factory method for DI, not autowiring
 //use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -33,16 +36,25 @@ class AnytownController extends ControllerBase {
    */
   private $logger;
 
+//  /**
+//   * #ould have to declare if injecting current user service
+//   * The current user service.
+//   *
+//   * @var \Drupal\Core\Session\AccountInterface
+//   */
+//  protected $currentUser;
+
   /**
    * WeatherPage controller constructor.
    *
    * @param \GuzzleHttp\ClientInterface $http_client
    *   HTTP client.
    */
-  public function __construct(ClientInterface $http_client) {
+  public function __construct(ClientInterface $http_client, AccountInterface $current_user) {
     $this->httpClient = $http_client;
     // getLogger() comes from ControllerBase class we're extending so no need to DI it
     $this->logger = $this->getLogger('anytown');
+    $this->currentUser = $current_user;
   }
 
   /**
@@ -78,6 +90,9 @@ class AnytownController extends ControllerBase {
       $this->logger->log(RfcLogLevel::WARNING, $e->getMessage());
     }
 
+//    $userName = $this->currentUser()->getDisplayName();
+    $userName = $this->currentUser->getDisplayName();
+
     if ($data) {
       $forecast = '<ul>';
       foreach ($data->list as $day) {
@@ -88,6 +103,7 @@ class AnytownController extends ControllerBase {
         $low = round(($day->main->temp_min - 273.15) * 9 / 5 + 32);
         $forecast .= "<li>$weekday will be <em>$description</em> with a high of $high and a low of $low.</li>";
       }
+      $forecast .= "- Weather verified by $userName";
       $forecast .= '</ul>';
     }
     else {
