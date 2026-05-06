@@ -4,6 +4,7 @@ https://drupalize.me/tutorial/concept-creating-custom-services
 Definition:
 Business logic refers to the specific rules and workflows that govern how your site’s data is created, processed, and validated to
 meet real-world requirements. It is the "brain" of the application.
+IMPORTANT: This helps to separate the business logic from presentation (controller, templates) and infrastructure (forms, modules).
 
 Custom services in Drupal modules encapsulate specific business logic or functionality. Making  code more reusable and maintainable.
 Separated from Drupal's core or contributed module services.
