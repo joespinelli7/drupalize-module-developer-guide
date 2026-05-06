@@ -1,0 +1,36 @@
+Notes from Drupalize Creating Custom Services tutorial:
+https://drupalize.me/tutorial/concept-creating-custom-services
+
+Definition:
+Business logic refers to the specific rules and workflows that govern how your site’s data is created, processed, and validated to
+meet real-world requirements. It is the "brain" of the application.
+
+Custom services in Drupal modules encapsulate specific business logic or functionality. Making  code more reusable and maintainable.
+Separated from Drupal's core or contributed module services.
+
+Main Reasons for custom services:
+1. Reusability:
+Defined services can be reused in different parts of a module or project, reducing code duplication and promoting DRY (Don't Repeat
+Yourself) principles.
+2. Testing:
+Services allow for independent and more efficient testing. Ioslating business logic simplifies unit testing and ensures reusability.
+3. Maintainability:
+Services contribute to leaner and cleaner controllers and other components by separating the business logic. Controllers should focus on
+request processing and delegate business logic to isolated and reusable services that are not under the same constraints.
+
+Components of a service:
+- PHP interface: defines the service's publicly accessible methods and provides a template for service implementation.
+- PHP class: implements the service's interface.
+- service definition: in the MODULE_NAME.services.yml file, which is used by the service container for discovery and management.
+
+Practical examples:
+- Reusable weather forecast block: extending the module to include a block for displaying the weather forecast becomes simpler if the fetching
+and processing logic is in a custom service. Allowing code reuse in both block and controller. Reuse = less code.
+- Integrating third-party libraries: wrapping external libraries from Composer in a Drupal service ensures seamless integration and accessibilty
+of the library's functionalities throughout the module.
+- Configurable API selection: A service can adapt to different third-party weather API integrations. This allows us to choose preferred API while
+ensuring the controller and block remain unaffected by choice of API due to separation of concerns.
+
+Recap
+Custom services in Drupal organize a module's business logic, enhancing testability, reusability, and maintainable code architecture. They are key
+to efficient Drupal module development. Whenever business logic creeps into a controller or block, consider encapsulating it in a service.
