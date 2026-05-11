@@ -1,0 +1,7 @@
+services:
+#  When an instance of the anytown.forecast_client service is requested from the service container, it will use this definition to figure out which class
+#  to use and what argument values to pass to the class constructor.
+  anytown.forecast_client:
+    class: Drupal\anytown\ForecastClient
+    arguments: ['@http_client', '@logger.factory']
+  Drupal\anytown\ForecastClientInterface: '@anytown.forecast_client'
