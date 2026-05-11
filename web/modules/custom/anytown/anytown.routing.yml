@@ -1,7 +1,7 @@
 anytown.weather_page:
   # The URL path where this page will be displayed. {style} represents a
   # placeholder and will be populated by whatever is entered into that position
-  # of the URL. Its value is passed the controller's build method.
+  # of the URL. Its value is passed via the controller's build method.
   path: '/weather/{style}'
   defaults:
     # Title of the page used for things like <title> tag.

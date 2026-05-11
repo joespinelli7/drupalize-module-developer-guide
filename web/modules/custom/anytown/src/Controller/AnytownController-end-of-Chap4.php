@@ -37,7 +37,7 @@ class AnytownController extends ControllerBase {
   private $logger;
 
 //  /**
-//   * #ould have to declare if injecting current user service
+//   * Would have to declare if injecting current user service
 //   * The current user service.
 //   *
 //   * @var \Drupal\Core\Session\AccountInterface
