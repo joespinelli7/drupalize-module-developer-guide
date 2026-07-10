@@ -4,10 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
-    - field.field.node.page.field_note
     - node.type.page
   module:
-    - field_permission_example
     - path
     - text
 _core:
@@ -30,12 +28,6 @@ content:
   created:
     type: datetime_timestamp
     weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_note:
-    type: field_permission_example_widget
-    weight: 121
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -80,11 +72,6 @@ content:
     settings:
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  translation:
-    weight: 10
-    region: content
-    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

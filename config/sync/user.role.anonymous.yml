@@ -5,7 +5,6 @@ dependencies:
   config:
     - filter.format.restricted_html
   module:
-    - anytown
     - comment
     - contact
     - filter
@@ -21,4 +20,3 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'use text format restricted_html'
-  - 'view weekly weather'

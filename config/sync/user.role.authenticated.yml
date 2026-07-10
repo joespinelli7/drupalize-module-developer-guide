@@ -5,7 +5,6 @@ dependencies:
   config:
     - filter.format.basic_html
   module:
-    - anytown
     - comment
     - contact
     - file
@@ -27,4 +26,3 @@ permissions:
   - 'post comments'
   - 'skip comment approval'
   - 'use text format basic_html'
-  - 'view weekly weather'
