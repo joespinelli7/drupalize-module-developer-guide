@@ -20,3 +20,21 @@ function anytown_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function anytown_theme_registry_alter(array &$theme_registry): void {
+  // Keep Honey's page template while changing Drupal's HTML wrapper.
+  $module_path = \Drupal::service('extension.list.module')->getPath('anytown');
+  $template_path = $module_path . '/templates/layout';
+  $theme_registry['html']['path'] = $template_path;
+  $theme_registry['html']['template'] = 'html';
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function anytown_page_attachments(array &$attachments): void {
+  $attachments['#attached']['library'][] = 'anytown/welcome-banner';
+}
