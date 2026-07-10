@@ -1,0 +1,4 @@
+welcome-banner:
+  css:
+    component:
+      css/welcome-banner.css: {}

@@ -1,0 +1,30 @@
+.anytown-welcome-banner {
+  background: #f8c630;
+  color: #20201f;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.anytown-welcome-banner__message {
+  animation: anytown-welcome-banner-scroll 22s linear infinite;
+  display: inline-block;
+  font-weight: 700;
+  margin: 0;
+  padding: 0.75rem 0;
+  transform: translateX(100vw);
+}
+
+@keyframes anytown-welcome-banner-scroll {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anytown-welcome-banner__message {
+    animation: none;
+    display: block;
+    text-align: center;
+    transform: none;
+  }
+}
