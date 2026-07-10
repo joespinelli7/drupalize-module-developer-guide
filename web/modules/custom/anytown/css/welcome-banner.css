@@ -2,29 +2,37 @@
   background: #f8c630;
   color: #20201f;
   overflow: hidden;
-  white-space: nowrap;
 }
 
-.anytown-welcome-banner__message {
+.anytown-welcome-banner__track {
   animation: anytown-welcome-banner-scroll 22s linear infinite;
-  display: inline-block;
+  display: flex;
+  width: 200%;
+}
+
+.anytown-welcome-banner__group {
+  display: grid;
+  flex: 0 0 50%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.anytown-welcome-banner__group span {
+  font-size: clamp(0.65rem, 1.5vw, 1rem);
   font-weight: 700;
   margin: 0;
   padding: 0.75rem 0;
-  transform: translateX(100vw);
+  text-align: center;
 }
 
 @keyframes anytown-welcome-banner-scroll {
   to {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .anytown-welcome-banner__message {
+  .anytown-welcome-banner__track {
     animation: none;
-    display: block;
-    text-align: center;
     transform: none;
   }
 }
